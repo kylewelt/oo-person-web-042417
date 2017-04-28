@@ -16,39 +16,31 @@ class Person
   end
 
   def happiness=(happiness)
-    @happiness = happiness
-
-    if @happiness >= MAX_POINTS
+    if happiness >= MAX_POINTS
       @happiness = MAX_POINTS
-    elsif @happiness <= MIN_POINTS
+    elsif happiness <= MIN_POINTS
       @happiness = MIN_POINTS
+    else
+      @happiness = happiness
     end
   end
 
   def hygiene=(hygiene)
-    @hygiene = hygiene
-
-    if @hygiene >= MAX_POINTS
+    if hygiene >= MAX_POINTS
       @hygiene = MAX_POINTS
-    elsif @hygiene <= MIN_POINTS
+    elsif hygiene <= MIN_POINTS
       @hygiene = MIN_POINTS
+    else
+      @hygiene = hygiene
     end
   end
 
   def clean?
-    if self.hygiene > 7
-      true
-    else
-      false
-    end
+    self.hygiene > 7
   end
 
   def happy?
-    if self.happiness > 7
-      true
-    else
-      false
-    end
+    self.happiness > 7
   end
 
   def get_paid(salary)
